@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ryon Das — GT Movies Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #14120f;
+    --bg-panel: #1e1b17;
+    --accent: #d4a73b;
+    --text: #f3eee3;
+    --text-muted: #a89f8f;
+    --line: #3a352c;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  header {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  header .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  nav {
+    display: flex;
+    gap: 24px;
+    font-size: 0.9rem;
+  }
+
+  nav a { color: var(--text-muted); }
+  nav a:hover { color: var(--accent); text-decoration: none; }
+
+  .hero {
+    padding: 96px 0 88px;
+  }
+
+  .hero p.kicker {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0 0 18px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    line-height: 1.08;
+    margin: 0 0 24px;
+    max-width: 12ch;
+  }
+
+  .hero p.lede {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 58ch;
+    margin: 0;
+  }
+
+  .sprockets {
+    display: flex;
+    gap: 10px;
+    padding: 40px 0;
+    justify-content: center;
+  }
+
+  .sprockets span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--line);
+  }
+
+  section.block {
+    padding: 8px 0 72px;
+  }
+
+  section.block h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin: 0 0 28px;
+  }
+
+  section.block > .wrap > p {
+    max-width: 62ch;
+    color: var(--text);
+  }
+
+  .feature-list {
+    margin-top: 28px;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .feature-list li {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 20px;
+    font-size: 0.95rem;
+  }
+
+  .feature-list .label {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .feature-list .desc { color: var(--text-muted); }
+
+  @media (max-width: 560px) {
+    .feature-list li { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  .process-steps {
+    margin-top: 28px;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 22px;
+  }
+
+  .process-steps li {
+    padding-left: 20px;
+    border-left: 2px solid var(--line);
+    color: var(--text-muted);
+    max-width: 62ch;
+  }
+
+  .process-steps li strong {
+    display: block;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .video-frame {
+    margin-top: 28px;
+    aspect-ratio: 16 / 9;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 24px;
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 36px 0 48px;
+  }
+
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  footer a { color: var(--text-muted); }
+  footer a:hover { color: var(--accent); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Ryon Das</div>
+    <nav>
+      <a href="#project">Project</a>
+      <a href="#process">Process</a>
+      <a href="#demo">Demo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero wrap">
+  <p class="kicker">Computer Science, Georgia Institute of Technology</p>
+  <h1>Hi, I'm Ryon.</h1>
+  <p class="lede">
+    I'm a CS student at Georgia Tech, currently working through the fundamentals
+    of full-stack web development. This page walks through GT Movies Store,
+    a Django application I built for CS 2340 — how it works, how I built it,
+    and what it looks like in action.
+  </p>
+</div>
+
+<div class="sprockets" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<section class="block" id="project">
+  <div class="wrap">
+    <h2>GT Movies Store</h2>
+    <p>
+      GT Movies Store is a Django web application that lets users browse a
+      catalog of movies, read and leave reviews, manage a shopping cart, and
+      track their past orders. Administrators can manage the full catalog,
+      users, and reviews through a dedicated admin interface. It was built
+      end to end — models, views, templates, authentication, and
+      deployment — following the assignment's required user stories.
+    </p>
+    <ul class="feature-list">
+      <li><span class="label">Browsing</span><span class="desc">View and search the movie catalog, see full details and pricing for each title.</span></li>
+      <li><span class="label">Accounts</span><span class="desc">Sign up, log in, and log out with a custom Django authentication flow.</span></li>
+      <li><span class="label">Reviews</span><span class="desc">Logged-in users can write, edit, delete, and report reviews on any movie.</span></li>
+      <li><span class="label">Cart & orders</span><span class="desc">Add movies to a cart, adjust quantities, complete a purchase, and view order history.</span></li>
+      <li><span class="label">Admin tools</span><span class="desc">Full management of users, movies, reviews, and orders through Django's admin site.</span></li>
+      <li><span class="label">Responsive design</span><span class="desc">Built with Bootstrap so the layout adapts across desktop, tablet, and mobile.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="process">
+  <div class="wrap">
+    <h2>How I built it</h2>
+    <p>
+      I worked through this project step by step, following <em>Django 5 for
+      the Impatient</em> as my primary guide and extending past it wherever
+      the assignment's requirements went further than the book did.
+    </p>
+    <ul class="process-steps">
+      <li>
+        <strong>Chapter by chapter</strong>
+        I moved through the book in order, since each chapter's code builds
+        directly on the last — templates before models, models before
+        authentication, authentication before reviews and the cart.
+      </li>
+      <li>
+        <strong>Build, run, break, fix</strong>
+        Most of my actual learning happened in the debugging loop: write
+        code, run the server, read the traceback, and figure out exactly
+        which line caused it. A recurring source of bugs was invisible
+        character corruption from copying multi-line code out of the
+        book's PDF — I got fast at spotting and retyping those by hand.
+      </li>
+      <li>
+        <strong>Version control and deployment</strong>
+        I tracked my work in Git and pushed to GitHub, then deployed the
+        finished app to PythonAnywhere — configuring the WSGI file, the
+        virtual environment, static files, and allowed hosts to get it
+        running in production.
+      </li>
+      <li>
+        <strong>Navigating doubt</strong>
+        When I got stuck, I leaned on the assignment's authorized
+        resources — the textbook, official Django docs, and Stack
+        Overflow — and worked through error messages methodically rather
+        than guessing at fixes.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="demo">
+  <div class="wrap">
+    <h2>Demo</h2>
+    <p>A walkthrough of GT Movies Store's main features.</p>
+    <div class="video-frame">
+      Replace this block with your embedded demo video<br />
+      (e.g. an iframe from YouTube or your recording link)
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Ryon Das — CS 2340, Fall 2026</span>
+    <span><a href="https://github.com/ryondas/MoviesStore" target="_blank" rel="noopener">Project source on GitHub</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
